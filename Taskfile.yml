@@ -2,7 +2,7 @@
 
 version: '3'
 
-# silent: true
+silent: true
 
 vars:
   ARTIFACT_REPO_FILES: https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main/student-repo-files
@@ -59,9 +59,12 @@ tasks:
     preconditions:
       - sh: '[[ "$PWD" == */{{.CLI_ARGS}} ]]'
         msg: "You must stand in a directory called 'lab_XX' to run this task. EX. 'lab_01'."
+    prompt: "This will overwrite 'answer.py' if you already have it downloaded. If you have started on the lab and want to save your work, rename your 'answer.py' to something else before continuing.\n Do you want to continue?"
     vars:
-      LABS:
-        map: {lab_01: kmom01/lab_01, lab_02: kmom02/_lab02}
+      LAB_PATH:
+        sh: echo "$PWD" | awk -F'/src/' '{print $2}'
     cmds:
       - task: download-artifacts
-      - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{index .LABS .CLI_ARGS}}/. .
+      - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{.LAB_PATH}}/. .
+      - task: clear-artifacts
+      - echo "{{.CLI_ARGS}} downloaded successfully. You can use the command 'ls' to se what files have been downloaded."
