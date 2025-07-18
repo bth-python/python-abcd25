@@ -14,9 +14,8 @@ tasks:
     desc: "Downloads the artifacts repo to /tmp/tmp-artifacts"
     internal: true
     cmds:
-      - task: clear-utils
-      - git clone --quiet 
-      {{.ARTIFACT_REPO}}.git {{.ARTIFACT_TMP_FILES}}
+      - task: clear-artifacts
+      - git clone --quiet {{.ARTIFACT_REPO}}.git {{.ARTIFACT_TMP_FILES}}
 
 
 
