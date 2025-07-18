@@ -5,7 +5,7 @@ version: '3'
 silent: true
 
 vars:
-  ARTIFACT_REPO_FILES: https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main/student-repo-files
+  ARTIFACT_REPO_FILES: https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main
   ARTIFACT_TMP_FILES: /tmp/tmp-artifacts/
   ARTIFACT_REPO: https://github.com/bth-python/python-abcd25
 
@@ -49,7 +49,7 @@ tasks:
     desc: "Downloads the Taskfile from the artifact repository"
     cmds:
       - curl -L -o Taskfile.yml {{.ARTIFACT_REPO_FILES}}/Taskfile.yml
-      - echo "Taskfile downloaded successfully."
+      - echo "Taskfile downloaded successfullysssss."
 
 
 
