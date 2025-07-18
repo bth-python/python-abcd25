@@ -2,7 +2,7 @@
 
 version: '3'
 
-silent: true
+# silent: true
 
 vars:
   ARTIFACT_REPO_FILES: https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main/student-repo-files
