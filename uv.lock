@@ -28,7 +28,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "go-task-bin", specifier = ">=3.44.0" },
+    { name = "go-task-bin", specifier = ">=3.44" },
     { name = "ruff", specifier = ">=0.12" },
 ]
 
