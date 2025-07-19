@@ -6,5 +6,6 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "go-task-bin>=3.44",
+    "python-tester>=3",
     "ruff>=0.12",
 ]
