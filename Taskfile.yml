@@ -40,7 +40,7 @@ tasks:
   download-ruff-config:
     desc: "Downloads the ruff configuration file from the artifact repository"
     cmds:
-      - curl -L -o ruff.toml {{.ARTIFACT_REPO_FILES}}/ruff.toml
+      - curl -s -L -o ruff.toml {{.ARTIFACT_REPO_FILES}}/ruff.toml
       - echo "Ruff configuration downloaded successfully."
 
 
@@ -48,7 +48,7 @@ tasks:
   download-taskfile:
     desc: "Downloads the Taskfile from the artifact repository"
     cmds:
-      - curl -L -o Taskfile.yml {{.ARTIFACT_REPO_FILES}}/Taskfile.yml
+      - curl -s -L -o Taskfile.yml {{.ARTIFACT_REPO_FILES}}/Taskfile.yml
       - echo "Taskfile downloaded successfully."
 
 
