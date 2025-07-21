@@ -10,27 +10,16 @@ from io import StringIO
 from unittest import TextTestRunner
 from unittest.mock import patch
 
-from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, tags
+from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, tags, setup_and_get_repo_path
 
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-REPO_PATH = find_path_to_assignment(FILE_DIR)
-
-if REPO_PATH not in sys.path:
-    sys.path.insert(0, REPO_PATH)
-
+REPO_PATH = setup_and_get_repo_path(FILE_DIR)
 
 class Test1ConvertStructure(ExamTestCase):
     """
     Each assignment has 1 testcase with multiple asserts.
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
     """
-
-    @classmethod
-    def setUpClass(cls):
-        """
-        To find all relative files that are read or written to.
-        """
-        os.chdir(REPO_PATH)
 
     @tags("struct")
     def test_file_convert_py_exist(self):
