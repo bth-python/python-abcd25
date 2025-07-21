@@ -68,3 +68,12 @@ tasks:
       - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{.LAB_PATH}}/. .
       - task: clear-artifacts
       - echo "{{.CLI_ARGS}} downloaded successfully. You can use the command 'ls' to se what files have been downloaded."
+
+
+
+  download-workflow:
+    desc: "Download workflows file that checks code at pull request."
+    cmds:
+      - mkdir -p .github/workflows
+      - curl -s -L -o .github/workflows/call_examiner.yml {{.ARTIFACT_REPO_FILES}}/.github/workflows/call_examiner.yml
+      - echo "Workflow file downloaded successfully."
