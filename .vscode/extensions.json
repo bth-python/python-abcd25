@@ -1,0 +1,28 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "soulcode.vscode-unwanted-extensions",
+        "aaron-bond.better-comments",
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-swedish",
+        "johnpapa.vscode-peacock",
+    ],
+    "unwantedRecommendations": [
+        "github.copilot",
+        "ms-azuretools.vscode-azure-github-copilot",
+        "github.copilot-chat",
+        "blackboxapp.blackbox",
+        "feiskyer.chatgpt-copilot",
+        "tabnine.tabnine-vscode",
+        "saoudrizwan.claude-dev",
+        "rooveterinaryinc.roo-cline",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "TabNine.tabnine-vscode",
+        "openai.chatgpt",
+        "DanielSanMedium.dscodegpt",
+        "Codeium.codeium",
+    ]
+}

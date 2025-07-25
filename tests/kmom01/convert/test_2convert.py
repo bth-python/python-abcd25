@@ -10,14 +10,10 @@ from io import StringIO
 from unittest import TextTestRunner
 from unittest.mock import patch
 
-from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, import_module, tags
+from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, import_module, tags, setup_and_get_repo_path
 
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
-REPO_PATH = find_path_to_assignment(FILE_DIR)
-
-
-if REPO_PATH not in sys.path:
-    sys.path.insert(0, REPO_PATH)
+REPO_PATH = setup_and_get_repo_path(FILE_DIR)
 
 # Path to file and basename of the file to import
 # convert = import_module(REPO_PATH, "convert") # Has inputs, use in check_print
@@ -30,13 +26,6 @@ class Test2Convert(ExamTestCase):
     """
 
     link_to_assignment = "https://dbwebb-python-bth.github.io/website/laromaterial/uppgift/convert/"
-
-    @classmethod
-    def setUpClass(cls):
-        """
-        To find all relative files that are read or written to.
-        """
-        os.chdir(REPO_PATH)
 
     def get_output_from_program(self, inp):
         """

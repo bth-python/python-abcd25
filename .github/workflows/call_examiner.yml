@@ -1,0 +1,10 @@
+name: Call Examining Workflow
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: python-bth/utils/.github/workflows/examiner.yml@main
