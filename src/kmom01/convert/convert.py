@@ -32,7 +32,7 @@ convert_type = convert_type.lower()  # Gör valet skiftlägesokänsligt
 # Prisomvandling
 if convert_type == "p":
     discount = 10
-    taxrate = 0.3
+    taxrate = 0.2
     final_price = round((value_to_convert - discount) * (1 + taxrate), 2)
     print_str = (
         f"The final price of {value_to_convert} after 10kr discount"
@@ -41,7 +41,7 @@ if convert_type == "p":
 
 # Hastighetsomvandling
 elif convert_type == "s":
-    mph = round(value_to_convert * 0.62137, 3)
+    mph = round(value_to_convert * 0.62137, 2)
     print_str = f"{value_to_convert} km/h is equivalent to {mph} mph"
 
 # Ogiltigt val
