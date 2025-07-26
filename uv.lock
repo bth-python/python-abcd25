@@ -109,7 +109,6 @@ requires-dist = [
 
 [[package]]
 name = "python-tester"
-<<<<<<< HEAD
 version = "3.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
@@ -118,17 +117,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0b/c7/9c7954051d86816c373c7771cc10f2d1038149e3b12a38706389a2202d58/python_tester-3.0.1.tar.gz", hash = "sha256:3f3d1012f5793d79f7cb4e2a1f2d26de09068a179630b092ff3aa20f59b105df", size = 70086 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2d/ed/629613948a527a7dc607416213822b88aa5db29a2745d90623270c36064f/python_tester-3.0.1-py3-none-any.whl", hash = "sha256:d1de7965d0ad4337c24ac2fbd67da62b5bcdae43f6220de687b89e7d2ac19c65", size = 16426 },
-=======
-version = "3.1.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "colorama" },
-    { name = "pylint" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/92/d8/9c72d809115900976a51e77f53476d2c95f52d3010944d3bf6411e6aef57/python_tester-3.1.1.tar.gz", hash = "sha256:f8119c53e0a38040b8dc4da1a88e727a9d0e2d7f3392dc8ca1bdf1a5e1f7fbaa", size = 44270, upload-time = "2025-07-21T10:20:36.019Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/34/0a/e06d33d5853a0836f6bc7ca1ce5573d94f58476c603f4e5f6f9678ff3a88/python_tester-3.1.1-py3-none-any.whl", hash = "sha256:7daeed6be7338def36d089c03a782c679aa07499fba47806a19656da6c856904", size = 20404, upload-time = "2025-07-21T10:20:34.79Z" },
->>>>>>> 35380f2562820ce9f0f9c48f383c7b8398e3bc0a
 ]
 
 [[package]]
