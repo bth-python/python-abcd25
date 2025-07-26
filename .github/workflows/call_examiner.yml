@@ -6,4 +6,4 @@ on:
 
 jobs:
   call-workflow:
-    uses: python-bth/utils/.github/workflows/examiner.yml@main
+    uses: bth-python/utils/.github/workflows/examiner.yml@main
