@@ -1,0 +1,17 @@
+# python
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Environments
+.venv
+venv/
+venv.bak/
+
+# Ruff stuff:
+.ruff_cache/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
