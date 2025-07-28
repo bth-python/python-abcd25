@@ -64,9 +64,9 @@ jobs:
         run: |
           user="${{ steps.get-pr.outputs.merged_by }}"
           echo "Checking membership for $user..."
-
+          echo "$(gh api /orgs/bth-python/teams --jq '.[].slug')"
           status=$(gh api orgs/bth-python/teams/teacher/memberships/$user --jq '.state' || echo "not_found")
-
+          echo "$status"
           if [[ "$status" == "active" ]]; then
             echo "authorized=true" >> "$GITHUB_OUTPUT"
           else
