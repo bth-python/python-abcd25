@@ -13,7 +13,7 @@ def hello():
     Returns:
         str: "Hello world".
     """
-    return "Hello you"
+    return "Hello world"
 
 
 def magic_number():
@@ -23,6 +23,7 @@ def magic_number():
     Returns:
         int: The integer value 42.
     """
+    return 42
 
 
 def float_str(string_number):
@@ -35,6 +36,7 @@ def float_str(string_number):
     Returns:
         float: The float number.
     """
+    return float(string_number)
 
 
 def string_length(word):
@@ -47,6 +49,7 @@ def string_length(word):
     Returns:
         int: The length of the string.
     """
+    return len(word)
 
 
 def round_pi(pi):
@@ -58,6 +61,7 @@ def round_pi(pi):
     Returns:
         float: The value of PI, rounded to three decimals.
     """
+    return round(pi, 3)
 
 
 def concat_strings(word1, word2):
@@ -71,6 +75,7 @@ def concat_strings(word1, word2):
     Returns:
         str: The concatenated string.
     """
+    return f"{word1} {word2}"
 
 
 def char_at_position(word):
@@ -84,6 +89,7 @@ def char_at_position(word):
     Returns:
         str: The character at index 4 in the incoming string.
     """
+    return word[4]
 
 
 def lower(word):
@@ -97,6 +103,7 @@ def lower(word):
     Returns:
         str: The string in lowercase.
     """
+    return word.lower()
 
 
 def divide_string_number():
@@ -109,6 +116,10 @@ def divide_string_number():
     Returns:
         int: The rounded result of int('30') / 5.
     """
+    string_number = "30"
+    actual_number = 5
+    result = int(string_number) / actual_number
+    return round(result)
 
 
 def even_or_odd(n):
@@ -121,6 +132,12 @@ def even_or_odd(n):
     Returns:
         str: "Even" if `n` is divisible by 2, otherwise "Odd".
     """
+    res = ""
+    if n % 2 == 0:
+        res = "Even"
+    else:
+        res = "Odd"
+    return res
 
 
 def password_check(password):
@@ -133,3 +150,6 @@ def password_check(password):
     Returns:
         str: "Too short" if the password length is less than 5, otherwise "OK".
     """
+    # Annat sätt att skriva if-satser på, om bara vill returnera ett värde
+    max_len = 5
+    return "Too short" if len(password) < max_len else "OK"
