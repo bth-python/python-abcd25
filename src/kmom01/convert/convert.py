@@ -32,6 +32,7 @@ convert_type = convert_type.lower()  # Gör valet skiftlägesokänsligt
 # Prisomvandling
 if convert_type == "p":
     discount = 10
+
     taxrate = 0.2
     final_price = round((value_to_convert - discount) * (1 + taxrate), 2)
     print_str = (
