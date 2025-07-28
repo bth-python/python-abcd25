@@ -17,7 +17,7 @@ jobs:
         id: get-assignment
         run: |
           echo "Branch: $GITHUB_REF_NAME"
-          echo '${{ vars.ASSIGNMENTS }}'
+          echo "${{ vars.ASSIGNMENTS }}"
           assignment_id=$(echo '${{ vars.ASSIGNMENTS }}' | jq -r --arg branch "$GITHUB_REF_NAME" '.[$branch]')
           echo "assignment=$assignment_id"
           if [[ "$assignment_id" == "null" || -z "$assignment_id" ]]; then
@@ -35,6 +35,9 @@ jobs:
       authorized: ${{ steps.verify.outputs.authorized }}
       merged_by: ${{ steps.get-pr.outputs.merged_by }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Install GitHub CLI
         run: sudo apt-get install gh -y
 
