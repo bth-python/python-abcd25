@@ -2,6 +2,8 @@
 Detta modul innehåller verktyg för att köra tester, samla statistik och skriva ut resultat.
 """
 
+import sys
+
 
 class Statistic:
     """
@@ -150,3 +152,7 @@ class DBW:
 --------------------------------------------------------------------
 """
         print(summary)
+
+        if result >= DBW.PASS:
+            sys.exit(0)
+        sys.exit(1)

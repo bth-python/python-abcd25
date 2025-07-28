@@ -16,9 +16,7 @@ import solution as labs
 from dbw import DBW
 
 lab = labs if len(sys.argv) > 1 and sys.argv[1] == "-s" else laba
-i = 0
-k = 0
-fd = 0
+
 DBW.assert_(lab.hello, [], "Hello world", 1)
 
 DBW.assert_(lab.magic_number, [], 42, 1)
