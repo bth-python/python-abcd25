@@ -1,0 +1,19 @@
+name: Main Entry Workflow
+
+on:
+  pull_request:
+    types: [opened]
+  pull_request_review:
+    types: [submitted]
+  push:
+    branches:
+      - 'bth/submit/*'
+  workflow_dispatch:
+
+jobs:
+  call-decider:
+    uses: ./.github/workflows/decider.yml
+    with:
+      event_name: ${{ github.event_name }}
+      pr_action: ${{ github.event.action || '' }}
+      review_state: ${{ github.event.review.state || '' }}

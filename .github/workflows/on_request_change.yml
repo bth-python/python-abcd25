@@ -1,0 +1,10 @@
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  on-changes-requested:
+    if: github.event.review.state == 'changes_requested'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "A reviewer requested changes!"

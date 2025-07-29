@@ -1,0 +1,11 @@
+name: Run on PR Created
+
+on:
+  pull_request:
+    types: [opened]  # Only run when a PR is created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This workflow runs when a PR is created!"
