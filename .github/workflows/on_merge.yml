@@ -60,7 +60,7 @@ jobs:
       - name: Check if user is in 'teacher' team
         id: verify
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.READ_ORG_TOKEN }}
         run: |
           user="${{ steps.get-pr.outputs.merged_by }}"
           echo "Checking membership for $user..."
