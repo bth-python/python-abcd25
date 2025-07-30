@@ -27,5 +27,9 @@ jobs:
     uses: bth-python/utils/.github/workflows/decider.yml@main
     with:
       event_name: ${{ github.event_name }}
+      event: ${{ github.event }}
       pr_action: ${{ github.event.action || '' }}
       review_state: ${{ github.event.review.state || '' }}
+      course_id: ${{ vars.COURSE_ID }}
+      available_assignments: ${{ vars.ASSIGNMENTS }}
+    secrets: inherit
