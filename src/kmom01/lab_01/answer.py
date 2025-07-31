@@ -13,7 +13,7 @@ def hello():
     Returns:
         str: "Hello world".
     """
-    return "Hello worlsd"
+    return "Hello world"
 
 
 def magic_number():
@@ -61,7 +61,7 @@ def round_pi(pi):
     Returns:
         float: The value of PI, rounded to three decimals.
     """
-    return round(pi, 2)
+    return round(pi, 3)
 
 
 def concat_strings(word1, word2):
@@ -75,7 +75,7 @@ def concat_strings(word1, word2):
     Returns:
         str: The concatenated string.
     """
-    return f"{word1} edda{word2}"
+    return f"{word1} {word2}"
 
 
 def char_at_position(word):
@@ -103,7 +103,7 @@ def lower(word):
     Returns:
         str: The string in lowercase.
     """
-    return word
+    return word.lower()
 
 
 def divide_string_number():
@@ -116,7 +116,7 @@ def divide_string_number():
     Returns:
         int: The rounded result of int('30') / 5.
     """
-    string_number = "30222"
+    string_number = "30"
     actual_number = 5
     result = int(string_number) / actual_number
     return round(result)
@@ -134,9 +134,9 @@ def even_or_odd(n):
     """
     res = ""
     if n % 2 == 0:
-        res = "Evenee"
+        res = "Even"
     else:
-        res = "Odeeed"
+        res = "Odd"
     return res
 
 
@@ -152,4 +152,4 @@ def password_check(password):
     """
     # Annat sätt att skriva if-satser på, om bara vill returnera ett värde
     max_len = 5
-    return "Too ddshort" if len(password) < max_len else "OdddK"
+    return "Too short" if len(password) < max_len else "OK"
