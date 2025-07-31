@@ -13,7 +13,7 @@ def hello():
     Returns:
         str: "Hello world".
     """
-    return "Hello world"
+    return "Hello worlsd"
 
 
 def magic_number():
