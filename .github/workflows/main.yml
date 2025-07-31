@@ -2,7 +2,6 @@ name: Main Entry Workflow
 
 on:
   pull_request:
-    types: [opened]
   pull_request_review:
     types: [submitted]
   push:
