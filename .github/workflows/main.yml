@@ -31,4 +31,5 @@ jobs:
       review_state: ${{ github.event.review.state || '' }}
       course_id: ${{ vars.COURSE_ID }}
       available_assignments: ${{ vars.ASSIGNMENTS }}
+      kmom_paths: ${{ vars.KMOM_PATHS }}
     secrets: inherit
