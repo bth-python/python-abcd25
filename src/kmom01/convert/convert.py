@@ -33,7 +33,7 @@ convert_type = convert_type.lower()  # Gör valet skiftlägesokänsligt
 if convert_type == "p":
     discount = 10
 
-    taxrate = 0.2
+    taxrate = 0.22
     final_price = round((value_to_convert - discount) * (1 + taxrate), 2)
     print_str = (
         f"The final price of {value_to_convert} after 10kr discount"
