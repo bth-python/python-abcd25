@@ -2,6 +2,12 @@
 line-length = 100
 indent-width = 4
 
+
+extend-exclude = [
+    "practice"
+]
+
+
 [lint]
 
 unfixable = ["ALL"]
@@ -93,32 +99,3 @@ indent-style = "space"
 line-ending = "lf"
 skip-magic-trailing-comma = false
 quote-style = "double"
-
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".ipynb_checkpoints",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pyenv",
-    ".pytest_cache",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    ".vscode",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "site-packages",
-    "venv",
-]
