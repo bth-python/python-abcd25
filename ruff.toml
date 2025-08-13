@@ -1,0 +1,101 @@
+# rules https://docs.astral.sh/ruff/rules
+line-length = 100
+indent-width = 4
+
+
+extend-exclude = [
+    "practice"
+]
+
+
+[lint]
+
+unfixable = ["ALL"]
+
+ignore = [
+    "PERF401", # use list comprehension instead of generator expression
+    "PERF403", # use dict comprehension instead of generator expression
+    "PLR1722", # use sys.exit() instead of exit()
+    "N806",    # non-lowercase-variable-in-function. Allow uppercase variable names in functions
+]
+
+
+# If you want to use for OO code, there are more rules to add ex. https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi
+#  utkommenterade rader kräver att preview mode är aktiverat
+select = [
+    "A",       # prevent using keywords that clobber python builtins
+    "B",       # bugbear: security warnings
+    "E",       # pycodestyle, error
+    "W",       # pycodestyle, warning
+    "F",       # pyflakes
+    "N",       # pep8-naming
+    "PLE",     # Errors
+    "PLR",     # Refactor
+    "PLW",     # Warning
+    "ISC",     # implicit string concatenation
+    "ARG",     # flake8-unused-arguments 
+    "PERF",    # flake8-unused-arguments 
+    "C90",     # looks for complex functions
+    "UP",      # alert you when better syntax is available in your python version
+    "TID251",  # disallow importing specific modules
+    "T10",     # looks for breakpoints in code. Should not be in production code
+    "S102",    # use of `exec`
+    "BLE001",  # use of base exception classes
+    "EXE005",  # shebang is not first line
+    "Q003",    # avoid escaping quotes
+    "Q004",    # unnecessary escaped quotes
+    "RET503",  # add explicit return in functions
+    "RET507",  # superfluous-else-continue
+    "RET508",  # superfluous-else-break
+    "SLF001",  # Private member accessed
+    "SIM113",  # Use enumerate() for index variable {index} in for loop
+    "SIM114",  # Combine if branches using logical or operator
+    "SIM115",  # Use a context manager for opening files
+    "SIM118",  # Use key {operator} dict instead of key {operator} dict.keys()
+    "SIM201",  # Use {left} != {right} instead of not {left} == {right}
+    "SIM202",  # Use {left} == {right} instead of not {left} != {right}
+    "SIM208",  # Use {expr} instead of not (not {expr})
+    "SIM210",  # Remove unnecessary True if ... else False
+    "SIM211",  # Use not ... instead of False if ... else True
+    "SIM222",  # Use {expr} instead of {replaced}
+    "SIM223",  # Use {expr} instead of {replaced}
+    "SIM401",  # Use {contents} instead of an if block
+    "SIM910",  # Include default value in dict.get() call
+    "SIM911",  # Use dict.items() instead of zip()
+    "PLC0206", # Extracting value from dictionary without calling .items()
+    # "PLC0415", # import should be at the top-level of a file
+    "PLC1802", # len({expression}) used as condition without comparison
+    # "PLC1901", # {existing} can be simplified to {replacement} as an empty string is falsy
+    "PLC2401", # {kind} name {name} contains a non-ASCII character
+    "PLC2403", # Module alias {name} contains a non-ASCII character
+    # "PLC2701", # Private name import {name} from external module {module}
+    # "PLC2801", # Unnecessary dunder call to {method}. {replacement}.
+    "PLC3002", # Lambda expression called directly. Execute the expression inline instead.
+    "TRY203",  # Remove exception handler; error is immediately re-raised
+    "TRY301",  # Abstract raise to an inner function
+]
+
+
+# Add modules that should not be imported/used!
+[lint.flake8-tidy-imports.banned-api]
+"re".msg = "Regex is not part of this course. Everything you can do with regex, you can do using things taught in the course."
+"regex".msg = "Regex is not part of this course. Everything you can do with regex, you can do using things taught in the course."
+
+# Ignore `E402` (import violations) in all `__init__.py` files, and in selected subdirectories.
+[lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[lint.pylint]
+max-branches = 10
+
+
+[lint.pydocstyle]
+convention = "google"
+
+
+[format]
+indent-style = "space"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+quote-style = "double"
