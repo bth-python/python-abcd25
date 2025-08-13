@@ -1,0 +1,103 @@
+# https://taskfile.dev
+
+version: '3'
+
+silent: true
+
+vars:
+  ARTIFACT_REPO_FILES: https://raw.githubusercontent.com/bth-python/python-abcd25/refs/heads/main/
+  ARTIFACT_TMP_FILES: /tmp/tmp-artifacts
+  ARTIFACT_REPO: https://github.com/bth-python/python-abcd25
+
+tasks:
+  download-artifacts:
+    desc: "Downloads the artifacts repo to /tmp/tmp-artifacts"
+    internal: true
+    cmds:
+      - task: clear-artifacts
+      - git clone --quiet {{.ARTIFACT_REPO}}.git {{.ARTIFACT_TMP_FILES}}
+
+
+
+  clear-artifacts:
+    desc: "Removes /tmp/tmp-artifacts, used to clear the artifacts repo"
+    internal: true
+    cmds:
+      - rm -rf {{.ARTIFACT_TMP_FILES}}
+
+
+
+  download-tests:
+    desc: "Replaces files in tests/ with files from the artifact repository, {{.ARTIFACT_REPO}}"
+    cmds:
+      - task: download-artifacts
+      - cp -a {{.ARTIFACT_TMP_FILES}}/tests/. tests
+      - task: clear-artifacts
+      - echo "Tests downloaded successfully."
+
+
+
+  download-ruff-config:
+    desc: "Downloads the ruff configuration file from the artifact repository"
+    cmds:
+      - curl -s -L -o ruff.toml {{.ARTIFACT_REPO_FILES}}/ruff.toml
+      - echo "Ruff configuration downloaded successfully."
+
+
+
+  download-taskfile:
+    desc: "Downloads the Taskfile from the artifact repository"
+    cmds:
+      - curl -s -L -o Taskfile.yml {{.ARTIFACT_REPO_FILES}}/Taskfile.yml
+      - echo "Taskfile downloaded successfully."
+
+
+
+  download-lab:
+    desc: "Download a lab. Run with 'uv run task download-lab -- lab_XX', replace XX with the lab number."
+    dir: "{{.USER_WORKING_DIR}}"
+    preconditions:
+      - sh: '[[ "$PWD" == */{{.CLI_ARGS}} ]]'
+        msg: "You must stand in a directory called 'lab_XX' to run this task. EX. 'lab_01'."
+    prompt: "This will overwrite 'answer.py' if you already have it downloaded. If you have started on the lab and want to save your work, rename your 'answer.py' to something else before continuing.\n Do you want to continue?"
+    vars:
+      LAB_PATH:
+        sh: echo "$PWD" | awk -F'/src/' '{print $2}'
+    cmds:
+      - task: download-artifacts
+      - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{.LAB_PATH}}/. .
+      - task: clear-artifacts
+      - echo "{{.CLI_ARGS}} downloaded successfully. You can use the command 'ls' to se what files have been downloaded."
+
+
+
+  download-workflow:
+    desc: "Download workflows file that checks code at pull request."
+    cmds:
+      - mkdir -p .github/workflows
+      - curl -s -L -o .github/workflows/call_examiner.yml {{.ARTIFACT_REPO_FILES}}/.github/workflows/call_examiner.yml
+      - echo "Workflow file downloaded successfully."
+
+
+  download-extensions:
+    desc: "Download file with recommended extensions."
+    cmds:
+      - mkdir -p .vscode
+      - curl -s -L -o .vscode/extensions.json {{.ARTIFACT_REPO_FILES}}/.vscode/extensions.json
+      - curl -s -L -o .vscode/extensions.json {{.ARTIFACT_REPO_FILES}}/.vscode/settings.json
+      - echo "Recommended extensions successfully."
+
+
+
+  check-have-files:
+    desc: "Checks that repo contain all needed files."
+    cmds:
+      - | 
+        [ -f .gitignore ] && echo "✅ .gitignore file found!" || { echo "❌ Error: .gitignore file not found!"; exit 1; }
+        [ -f .github/workflows/main.yml ] && echo "✅ .github/workflows/main.yml file found!" || { echo "❌ Error: .github/workflows/main.yml file not found!"; exit 1; }
+        [ -d tests ] && echo "✅ tests directory found!" || { echo "❌ Error: tests directory not found!"; exit 1; }
+        [ -f .editorconfig ] && echo "✅ .editorconfig file found!" || { echo "❌ Error: .editorconfig file not found!"; exit 1; }
+        [ -f .python-version ] && echo "✅ .python-version file found!" || { echo "❌ Error: .python-version file not found!"; exit 1; }
+        [ -f pyproject.toml ] && echo "✅ pyproject.toml file found!" || { echo "❌ Error: pyproject.toml file not found!"; exit 1; }
+        [ -f ruff.toml ] && echo "✅ ruff.toml file found!" || { echo "❌ Error: ruff.toml file not found!"; exit 1; }
+        [ -f uv.lock ] && echo "✅ uv.lock file found!" || { echo "❌ Error: uv.lock file not found!"; exit 1; }
