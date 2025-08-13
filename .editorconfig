@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# Indentation override for all JS under lib directory
+[*.{js,json,yaml,yml,css,html}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+[{Taskfile.yml}]
+indent_style = space
+indent_size = 4
