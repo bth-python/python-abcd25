@@ -75,7 +75,7 @@ tasks:
     desc: "Download workflows file that checks code at pull request."
     cmds:
       - mkdir -p .github/workflows
-      - curl -s -L -o .github/workflows/call_examiner.yml {{.ARTIFACT_REPO_FILES}}/.github/workflows/call_examiner.yml
+      - curl -s -L -o .github/workflows/main.yml {{.ARTIFACT_REPO_FILES}}/.github/workflows/main.yml
       - echo "Workflow file downloaded successfully."
 
 

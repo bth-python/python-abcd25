@@ -4,7 +4,8 @@ indent-width = 4
 
 
 extend-exclude = [
-    "practice"
+    "practice",
+    "tests"
 ]
 
 
