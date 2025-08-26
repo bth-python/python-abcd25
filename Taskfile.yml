@@ -92,7 +92,7 @@ tasks:
     cmds:
       - mkdir -p .vscode
       - curl -s -L -o .vscode/extensions.json {{.ARTIFACT_REPO_FILES}}/.vscode/extensions.json
-      - curl -s -L -o .vscode/extensions.json {{.ARTIFACT_REPO_FILES}}/.vscode/settings.json
+      - curl -s -L -o .vscode/settings.json {{.ARTIFACT_REPO_FILES}}/.vscode/settings.json
       - echo "Recommended extensions successfully."
 
 
