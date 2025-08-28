@@ -14,7 +14,7 @@ tasks:
   create-src-dirs:
     desc: "Creates the src directory structure if they do not exist"
     cmds:
-      - mkdir -p src/kmom01/{convert,lab_01,practice}
+      - mkdir -p src/kmom01/{convert,lab_01,practice,split_bill}
       - echo "Source directories created successfully. PS empty directories are not shown with 'git status'."
       - tree -d src
 
