@@ -16,14 +16,14 @@ from tester import (ExamTestCase, ExamTestResult, find_path_to_assignment,
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 REPO_PATH = setup_and_get_repo_path(FILE_DIR)
 
-class Test1ConvertStructure(ExamTestCase):
+class Test1SplitBillStructure(ExamTestCase):
     """
     Each assignment has 1 testcase with multiple asserts.
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
     """
 
     @tags("struct")
-    def test_file_convert_py_exist(self):
+    def test_file_split_py_exist(self):
         """
         Testerna hittar inte filen 'split.py'.
         """
