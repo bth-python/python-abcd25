@@ -70,7 +70,7 @@ tasks:
     prompt: "This will overwrite 'answer.py' if you already have it downloaded. If you have started on the lab and want to save your work, rename your 'answer.py' to something else before continuing.\n Do you want to continue?"
     vars:
       LAB_PATH:
-        sh: echo "$PWD" | awk -F'/src/' '{print $2}'
+        sh: echo "$PWD" | awk -F'src/' '{print $NF}'
     cmds:
       - task: download-artifacts
       - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{.LAB_PATH}}/. .
