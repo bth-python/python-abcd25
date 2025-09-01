@@ -10,7 +10,8 @@ from io import StringIO
 from unittest import TextTestRunner
 from unittest.mock import patch
 
-from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, import_module, tags, setup_and_get_repo_path
+from tester import (ExamTestCase, ExamTestResult, find_path_to_assignment,
+                    import_module, setup_and_get_repo_path, tags)
 
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 REPO_PATH = setup_and_get_repo_path(FILE_DIR)
@@ -48,7 +49,7 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = [80, "S"]
+        self._multi_arguments = ["80", "S"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("80.0 ", output_from_program)
         self.assertIn("49.71 ", output_from_program)
@@ -65,7 +66,7 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = [555.54, "S"]
+        self._multi_arguments = ["555.54", "S"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("555.54 ", output_from_program)
         self.assertIn("345.2 ", output_from_program)
@@ -82,7 +83,7 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = [100, "P"]
+        self._multi_arguments = ["100", "P"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("100.0 ", output_from_program)
         self.assertIn("108.0 ", output_from_program)
@@ -99,7 +100,7 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = [100, "P"]
+        self._multi_arguments = ["100", "P"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("100.0 ", output_from_program)
         self.assertIn("108.0 ", output_from_program)
