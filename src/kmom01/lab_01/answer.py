@@ -16,7 +16,6 @@ def hello():
     # TODO: Write your code here
 
 
-
 def magic_number():
     """
     Returns the integer value 42.
@@ -25,7 +24,6 @@ def magic_number():
         int: The integer value 42.
     """
     # TODO: Write your code here
-
 
 
 def float_str(string_number):
@@ -41,7 +39,6 @@ def float_str(string_number):
     # TODO: Write your code here
 
 
-
 def string_length(word):
     """
     Returns the length of the incoming string.
@@ -55,7 +52,6 @@ def string_length(word):
     # TODO: Write your code here
 
 
-
 def round_pi(pi):
     """
     Returns the value of PI, rounded to three decimals.
@@ -66,7 +62,6 @@ def round_pi(pi):
         float: The value of PI, rounded to three decimals.
     """
     # TODO: Write your code here
-
 
 
 def concat_strings(word1, word2):
@@ -83,7 +78,6 @@ def concat_strings(word1, word2):
     # TODO: Write your code here
 
 
-
 def char_at_position(word):
     """
     Returns the character at index 4 of the incoming string.
@@ -96,22 +90,6 @@ def char_at_position(word):
         str: The character at index 4 in the incoming string.
     """
     # TODO: Write your code here
-
-
-
-def lower(word):
-    """
-    Returns the incoming string in lowercase.
-    Hint: The lower() method.
-
-    Arguments:
-        word (str): The string to use.
-
-    Returns:
-        str: The string in lowercase.
-    """
-    # TODO: Write your code here
-
 
 
 def divide_string_number():
@@ -127,7 +105,6 @@ def divide_string_number():
     # TODO: Write your code here
 
 
-
 def even_or_odd(n):
     """
     Determines whether the given integer is even or odd.
@@ -139,7 +116,6 @@ def even_or_odd(n):
         str: "Even" if `n` is divisible by 2, otherwise "Odd".
     """
     # TODO: Write your code here
-
 
 
 def password_check(password):
