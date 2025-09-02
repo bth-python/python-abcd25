@@ -90,7 +90,7 @@ class Test1ConvertStructure(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = ["999", "p"]
+        self._multi_arguments = ["999", "P"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("999.0 ", output_from_program)
         self.assertIn("1186.8 ", output_from_program)

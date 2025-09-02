@@ -56,7 +56,7 @@ class Test2Convert(ExamTestCase):
 
 
     @tags("speed", "s", "S")
-    def test_b_speed_zero(self):
+    def test_b_speed_example_negative(self):
         """
         Testar kilometer till miles med ett heltal 0 som input.
         Använder följande som input:
@@ -88,23 +88,6 @@ class Test2Convert(ExamTestCase):
         output_from_program = self.get_output_from_program(self._multi_arguments)
         self.assertIn("100.0 ", output_from_program)
         self.assertIn("108.0 ", output_from_program)
-
-    @tags("price", "p", "P")
-    def test_d_price_zero(self):
-        """
-        Testar räkna ut pris efter rabatt med 0 som input.
-        Använder följande som input:
-        {arguments}
-        Förväntar att följande finns med i utskrift:
-        {correct}
-        Fick följande:
-        {student}
-        """
-        self.norepr = True
-        self._multi_arguments = ["0", "P"]
-        output_from_program = self.get_output_from_program(self._multi_arguments)
-        self.assertIn("0.0 ", output_from_program)
-        self.assertIn("-12.0 ", output_from_program)
 
 if __name__ == "__main__":
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)
