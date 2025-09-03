@@ -54,10 +54,11 @@ class Test2Convert(ExamTestCase):
         self.assertIn("80.0 ", output_from_program)
         self.assertIn("49.71 ", output_from_program)
 
+
     @tags("speed", "s", "S")
-    def test_b_speed_float_value(self):
+    def test_b_speed_zero(self):
         """
-        Testar kilometer till miles med decimaltal som input.
+        Testar kilometer till miles med ett heltal 0 som input.
         Använder följande som input:
         {arguments}
         Förväntar att följande finns med i utskrift:
@@ -66,10 +67,10 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = ["555.54", "S"]
+        self._multi_arguments = ["0", "S"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
-        self.assertIn("555.54 ", output_from_program)
-        self.assertIn("345.2 ", output_from_program)
+        self.assertIn("0.0 ", output_from_program)
+        self.assertIn("0.0 ", output_from_program)
 
     @tags("price", "p", "P")
     def test_c_price_example(self):
@@ -89,9 +90,9 @@ class Test2Convert(ExamTestCase):
         self.assertIn("108.0 ", output_from_program)
 
     @tags("price", "p", "P")
-    def test_d_price_float_value(self):
+    def test_d_price_zero(self):
         """
-        Testar räkna ut pris efter rabatt med decimaltal som input.
+        Testar räkna ut pris efter rabatt med 0 som input.
         Använder följande som input:
         {arguments}
         Förväntar att följande finns med i utskrift:
@@ -100,11 +101,10 @@ class Test2Convert(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._multi_arguments = ["100", "P"]
+        self._multi_arguments = ["0", "P"]
         output_from_program = self.get_output_from_program(self._multi_arguments)
-        self.assertIn("100.0 ", output_from_program)
-        self.assertIn("108.0 ", output_from_program)
-
+        self.assertIn("0.0 ", output_from_program)
+        self.assertIn("-12.0 ", output_from_program)
 
 if __name__ == "__main__":
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)

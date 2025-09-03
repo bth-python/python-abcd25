@@ -10,7 +10,8 @@ from io import StringIO
 from unittest import TextTestRunner
 from unittest.mock import patch
 
-from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, tags, setup_and_get_repo_path
+from tester import (ExamTestCase, ExamTestResult, find_path_to_assignment,
+                    setup_and_get_repo_path, tags)
 
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 REPO_PATH = setup_and_get_repo_path(FILE_DIR)

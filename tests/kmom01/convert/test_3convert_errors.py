@@ -10,7 +10,8 @@ from io import StringIO
 from unittest import TextTestRunner
 from unittest.mock import patch
 
-from tester import ExamTestCase, ExamTestResult, find_path_to_assignment, import_module, tags, setup_and_get_repo_path
+from tester import (ExamTestCase, ExamTestResult, find_path_to_assignment,
+                    import_module, setup_and_get_repo_path, tags)
 
 FILE_DIR = os.path.dirname(os.path.realpath(__file__))
 REPO_PATH = setup_and_get_repo_path(FILE_DIR)
@@ -39,7 +40,7 @@ class Test3ConvertErrors(ExamTestCase):
                 return fake_out.getvalue()
 
     @tags("error", "value")
-    def test_a_value_not_float(self):
+    def test_a_value_not_int(self):
         """
         Testar skicka in sträng värde som input. Kollar att felhantering sker.
         Använder följande som input:
@@ -50,7 +51,7 @@ class Test3ConvertErrors(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._argument = "inte float"
+        self._argument = "inte int"
         output_from_program = self.get_output_from_program(self._argument)
         self.assertIn("Invalid value", output_from_program)
 
@@ -66,7 +67,7 @@ class Test3ConvertErrors(ExamTestCase):
         {student}
         """
         self.norepr = True
-        self._argument = "inte float"
+        self._argument = "X"
         output_from_program = self.get_output_from_program(self._argument)
         self.assertIn("Invalid value", output_from_program)
 
