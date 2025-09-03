@@ -24,7 +24,7 @@ class Test1ConvertStructure(ExamTestCase):
         with patch("builtins.input", side_effect=""):
             with patch("sys.stdout", new=StringIO()) as _:
                 try:
-                    self.assertModule("convertee", REPO_PATH)
+                    self.assertModule("convert", REPO_PATH)
                 except StopIteration:
                     self.assertTrue(True)
 
