@@ -1,9 +1,5 @@
-
-import sys
-
-
-#password kontroll
-#loopen körs än sålänge invalid password, lyckas medan användaren sriver sitt korrekt pass
+# password kontroll
+# loopen körs än sålänge invalid password, lyckas medan användaren sriver sitt korrekt pass
 # while True:
 #     password = input("Enter your password: ")
 #     if password == "s1h2o":
@@ -13,20 +9,30 @@ import sys
 #         print("Please enter the correct password,\n")
 # print("End....")
 
-""" Kan man få samma resultat som i koden nedan utan att använda else? 
-    Om inte motivera varför? Om det är möjligt, förklara vilken ändring som behövs? """
-
-temperature = input("What's the temperature outside?: ") # tar en sträng här,  
-if (temperature <= 0):
-    print("Oh no, my water bottle will freeze!")
-else:
-    print("Ok, then I can drink the water from my water bottle!")
-
-    #Typeerror
+"""Kan man få samma resultat som i koden nedan utan att använda else?
+Om inte motivera varför? Om det är möjligt, förklara vilken ändring som behövs?"""
 
 temp = int(input("Whats the temperature? : "))
-if (temp <= 0):
+if temp <= 0:
     print("I am freezing...")
-else:
-    print("Ok i got it!")
-    
+print("Ok i got it!")
+
+
+speed = 10
+mile = speed * 0.62137
+print(f"10 km is equivalent to: {mile}")
+
+
+while True:
+    name = input("whats your Name?: ")
+    if name.lower() == "ali":
+        name = name.upper()
+        print(f"Your name is correct och det är, {name}, som är ditt namn")
+        answer = input("yes/no?: ")
+        if answer.lower() == "yes" or answer.lower() == "y":
+            print("ha det så bra! ")
+        else:
+            print("inte lyckades....")
+        break
+    else:
+        print("Invalid name, det som finns registrerad stämmer ej med ditt nuvarande namn ")
