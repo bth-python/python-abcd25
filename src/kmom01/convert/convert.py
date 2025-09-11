@@ -25,3 +25,8 @@ elif converter == "S":
 else:
     print("Invalid converter, please enter P or S.")
     exit()  # avsluta
+
+
+speed = 10
+mile = speed * 0.62137
+print(f"10 km is equivalent to: {mile}")
