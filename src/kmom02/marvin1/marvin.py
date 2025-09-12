@@ -1,6 +1,6 @@
 """
 marvin.py
-Ett textbaserat program med olika menyval.
+baserade text progam med olika manyval.
 """
 
 print(r"""
@@ -25,12 +25,12 @@ _____________|','   ///_/-------------/   |
               |===========,'
 """)  # <-- byt ut mot din egen ASCII-bild
 
-print("Hej! Jag heter Marvin 2.0 🤖")
+print("Hej! Jag heter Marvin 0.1 🤖")
 print("")
 
 while True:
     print("Meny:")
-    print("1) Säg hej")
+    print("1) Säga hej åt")
     print("2) Celsius till Fahrenheit")
     print("3) Poäng till betyg")
     print("4) Större/mindre/samma")
@@ -45,12 +45,12 @@ while True:
 
     elif choice == "1":
         name = input("Vad heter du? ")
-        print("Tjena", name, "! Kul att se dig här!")
+        print("Tja", name, "! Kul å ha det här")
 
     elif choice == "2":
         celsius = float(input("Ange temperatur i Celsius: "))
         fahrenheit = round(celsius * 9 / 5 + 32, 2)
-        print(f"{fahrenheit}")
+        print(f"Temperaturen i Fahrenheit blir då: {fahrenheit}")
 
     elif choice == "3":
         max_points = int(input("Ange maxpoäng: "))
@@ -73,11 +73,11 @@ while True:
         print(f"score: {grade}")
 
     elif choice == "4":
-        print("Skriv 'done' för att avsluta.")
+        print("Skriv 'ok' för att avsluta.")
         prev = None
         while True:
             value = input("Ange ett tal: ")
-            if value == "done":
+            if value == "ok":
                 break
             try:
                 num = int(value)
@@ -95,14 +95,14 @@ while True:
                 print("not a number!")
 
     elif choice == "5":
-        pnr = input("Ange personnummer: ")
-        pnr = pnr.replace("-", "")
+        person_nummer = input("Ange personnummer: ")
+        person_nummer = person_nummer.replace("-", "")
 
-        if not pnr.isdigit() or len(pnr) != 10:
+        if not person_nummer.isdigit() or len(person_nummer) != 10:
             print("Not valid")
         else:
             total = 0
-            for i, digit in enumerate(pnr):
+            for i, digit in enumerate(person_nummer):
                 n = int(digit)
                 if i % 2 == 0:
                     n = n * 2
