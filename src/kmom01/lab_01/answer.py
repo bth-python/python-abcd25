@@ -14,6 +14,10 @@ def hello():
         str: "Hello world".
     """
     # TODO: Write your code here
+    return "Hello world"
+
+
+print(hello())
 
 
 def magic_number():
@@ -24,6 +28,11 @@ def magic_number():
         int: The integer value 42.
     """
     # TODO: Write your code here
+    nbr = 42
+    return nbr
+
+
+print(magic_number())
 
 
 def float_str(string_number):
@@ -37,6 +46,10 @@ def float_str(string_number):
         float: The float number.
     """
     # TODO: Write your code here
+    return float(string_number)
+
+
+print(float_str("3.235235"))
 
 
 def string_length(word):
@@ -50,6 +63,10 @@ def string_length(word):
         int: The length of the string.
     """
     # TODO: Write your code here
+    return len(word)
+
+
+print(string_length("Hussain"))
 
 
 def round_pi(pi):
@@ -62,6 +79,10 @@ def round_pi(pi):
         float: The value of PI, rounded to three decimals.
     """
     # TODO: Write your code here
+    return round(pi, 3)
+
+
+print(round_pi(3.1421356))
 
 
 def concat_strings(word1, word2):
@@ -76,6 +97,11 @@ def concat_strings(word1, word2):
         str: The concatenated string.
     """
     # TODO: Write your code here
+    return word1 + " " + word2
+
+
+print(concat_strings("hej", "Hur är läget"))
+print(concat_strings("fine", "Tackar"))
 
 
 def char_at_position(word):
@@ -90,6 +116,11 @@ def char_at_position(word):
         str: The character at index 4 in the incoming string.
     """
     # TODO: Write your code here
+    return word[4]
+
+
+print(char_at_position("Indexering"))
+print(char_at_position("index"))
 
 
 def divide_string_number():
@@ -104,6 +135,14 @@ def divide_string_number():
     """
     # TODO: Write your code here
 
+    str_nbr = "30"
+    nbr = 5
+    result = int(str_nbr) / nbr
+    return round(result)
+
+
+print(divide_string_number())
+
 
 def even_or_odd(n):
     """
@@ -116,6 +155,14 @@ def even_or_odd(n):
         str: "Even" if `n` is divisible by 2, otherwise "Odd".
     """
     # TODO: Write your code here
+    if n % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+
+print(even_or_odd(33))
+print(even_or_odd(24))
 
 
 def password_check(password):
@@ -129,3 +176,10 @@ def password_check(password):
         str: "Too short" if the password length is less than 5, otherwise "OK".
     """
     # TODO: Write your code here
+    if len(password) < 5:
+        return "low password"
+    else:
+        return "OK"
+
+
+print(password_check("3fdw"))
