@@ -8,7 +8,7 @@ if not value.isdigit():  # om skrivningen inte va ett tal, kasta ut detta meddel
 value = int(value)  # bytar till int data typen
 
 converter = input(  # ber user att välja sitt val
-    "Choose what u want to convert:\n "
+    "Choose what u want to convert:\n"
     "P: Price, before --> after discount and tax\n"
     "S: Speed, km/h --> mph\n"
 )
@@ -25,8 +25,3 @@ elif converter == "S":
 else:
     print("Invalid converter, please enter P or S.")
     exit()  # avsluta
-
-
-speed = 10
-mile = speed * 0.62137
-print(f"10 km is equivalent to: {mile}")

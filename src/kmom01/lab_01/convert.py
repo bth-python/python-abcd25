@@ -16,7 +16,8 @@ converter = converter.upper()
 if converter == "P":
     price = (value - 10) * 1.2
     print(
-        f"The final price of {float(value): .2f} after 10 kr discount and 20% tax is: {price: .2f} kr"
+        f"The final price of {float(value): .2f} after 10 kr discount "
+        f" and 20% tax is: {price: .2f} kr"
     )
 elif converter == "S":
     mph = value * 0.62137
