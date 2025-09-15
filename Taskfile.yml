@@ -14,7 +14,7 @@ tasks:
   create-src-dirs:
     desc: "Creates the src directory structure if they do not exist"
     cmds:
-      - mkdir -p src/kmom01/{convert,lab_01,practice,split_bill}
+      - mkdir -p src/kmom01/{convert,lab_01,practice,split_bill} src/kmom02/{marvin1,practice,practice_validation}
       - echo "Source directories created successfully. PS empty directories are not shown with 'git status'."
       - tree -d src
 
@@ -70,7 +70,7 @@ tasks:
     prompt: "This will overwrite 'answer.py' if you already have it downloaded. If you have started on the lab and want to save your work, rename your 'answer.py' to something else before continuing.\n Do you want to continue?"
     vars:
       LAB_PATH:
-        sh: echo "$PWD" | awk -F'src/' '{print $NF}'
+        sh: echo "$PWD" | awk -F'/src/' '{print $2}'
     cmds:
       - task: download-artifacts
       - cp -a {{.ARTIFACT_TMP_FILES}}/src/{{.LAB_PATH}}/. .
