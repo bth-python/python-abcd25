@@ -136,7 +136,7 @@ class Test3Marvin2Extra(ExamTestCase):
             with patch("sys.stdout", new=StringIO()) as fake_out:
                 main.main()
                 str_data = fake_out.getvalue()
-        ssn = re.search("(991231-\d+)", str_data).group(1)
+        ssn = re.search(r"(991231-\d+)", str_data).group(1)
         self.assertFalse(
             int(ssn[-2]) % 2 == 1,
             [
@@ -160,6 +160,98 @@ class Test3Marvin2Extra(ExamTestCase):
             ]
         )
         
+
+    @tags("b3", "marvin2")
+    def test_find_all_indexes_menu(self):
+        """
+        Testar att anropa menyval b3 i main.py.
+        Använder följande som input:
+        {arguments}
+        Förväntar att följande finns med i utskriften:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self.norepr = True
+        self._multi_arguments = [
+            "b3",
+            "There's unlimited juice? This party is gonna be off the hook. Oh, I'm sorry, I forgot... your wife is dead!.",
+            "is",
+            "",
+            "q"
+        ]
+
+        self.check_print_contain(
+            self._multi_arguments,
+            ["27,36,99"],
+            main.main
+        )
+
+
+
+    @tags("b3", "marvin2")
+    def test_find_all_indexes_includes_last(self):
+        """
+        Testar att anropa funktionen find_all_indexes i marvin2.py. Där sista karaktären också ska hittas.
+        Använder följande som input:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._multi_arguments = [
+            "There's unlimited juice? This party is gonna be off the hook. Oh, I'm sorry, I forgot... your wife is dead!.",
+            "."
+        ]
+
+        self.assertEqual(
+                marvin2.find_all_indexes(
+                *self._multi_arguments
+            ),
+            "60,85,86,87,107"
+        )
+
+
+
+    @tags("b3", "marvin2")
+    def test_find_all_indexes_missing(self):
+        """
+        Testar att anropa funktionen find_all_indexes i marvin2.py. Där söksträngen saknas.
+        Använder följande som input:
+        {arguments}
+        Förväntar att följande returneras:
+        {correct}
+        Fick följande:
+        {student}
+        """
+        self._multi_arguments = [
+            "There's unlimited juice? This party is gonna be off the hook. Oh, I'm sorry, I forgot... your wife is dead!.",
+            "x"
+        ]
+
+        self.assertEqual(
+                marvin2.find_all_indexes(
+                *self._multi_arguments
+            ),
+            ""
+        )
+
+
+
+    # @tags("b3", "marvin2")
+    # def test_find_all_indexes_check_use_try_except(self):
+    #     """
+    #     Testar att funktionen find_all_indexes innehåller try och except konstruktionen.
+    #     Förväntar att följande rad finns i din funktion:
+    #     {correct}
+    #     Din funktion innehåller följande:
+    #     {student}
+    #     """
+    #     self.norepr = True
+    #     self.assertIn("try:", inspect.getsource(marvin2.find_all_indexes))
+    #     self.assertIn("except ValueError:", inspect.getsource(marvin2.find_all_indexes))
+
 
 if __name__ == '__main__':
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)

@@ -114,33 +114,6 @@ class Test2Marvin2NewMenus(ExamTestCase):
 
 
 
-    @tags("9", "marvin2")
-    def test_find_all_indexes_menu(self):
-        """
-        Testar att anropa menyval 9 i main.py.
-        Använder följande som input:
-        {arguments}
-        Förväntar att följande finns med i utskriften:
-        {correct}
-        Fick följande:
-        {student}
-        """
-        self.norepr = True
-        self._multi_arguments = [
-            "9",
-            "There's unlimited juice? This party is gonna be off the hook. Oh, I'm sorry, I forgot... your wife is dead!.",
-            "is",
-            "",
-            "q"
-        ]
-
-        self.check_print_contain(
-            self._multi_arguments,
-            ["27,36,99"],
-            main.main
-        )
-
-
 
 if __name__ == '__main__':
     runner = TextTestRunner(resultclass=ExamTestResult, verbosity=2)
