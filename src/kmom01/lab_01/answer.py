@@ -176,7 +176,8 @@ def password_check(password):
         str: "Too short" if the password length is less than 5, otherwise "OK".
     """
     # TODO: Write your code here
-    if len(password) < 5:
+    password_len = 5
+    if len(password) < password_len:
         return "low password"
     else:
         return "OK"
