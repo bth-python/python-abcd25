@@ -1,0 +1,37 @@
+name: Main Entry Workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+  pull_request_review:
+    types: [submitted]
+  push:
+    branches:
+      - "bth/submit/*"
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug context
+        run: |
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.head_ref: ${{ github.head_ref }}"
+          echo "github.base_ref: ${{ github.base_ref }}"
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "event_name: ${{ github.event_name }}"
+          echo "pr_action: ${{ github.event.action || '' }}"
+          echo "review_state: ${{ github.event.review.state || '' }}"
+  call-decider:
+    uses: bth-python/utils/.github/workflows/decider.yml@main
+    with:
+      event_name: ${{ github.event_name }}
+      event: ${{ toJson(github.event) }}
+      pr_action: ${{ github.event.action || '' }}
+      review_state: ${{ github.event.review.state || '' }}
+      course_id: ${{ vars.COURSE_ID }}
+      available_assignments: ${{ vars.ASSIGNMENTS }}
+      student_id: ${{ vars.STUDENT_CANVAS_ID }}
+      kmom_paths: ${{ vars.KMOM_PATHS }}
+    secrets: inherit
