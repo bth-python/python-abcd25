@@ -3,10 +3,7 @@ line-length = 100
 indent-width = 4
 
 
-extend-exclude = [
-    "practice",
-    "tests"
-]
+extend-exclude = ["practice", "tests"]
 
 
 [lint]
@@ -86,6 +83,7 @@ select = [
 [lint.per-file-ignores]
 "__init__.py" = ["E402"]
 "**/{tests,docs,tools}/*" = ["E402"]
+"**/main.py" = ["C901", "PLR0912"]   #  too-complex, ignore too-many-branches
 
 [lint.pylint]
 max-branches = 10
