@@ -4,26 +4,42 @@ from collections import Counter
 Marvin, vännen i terminal
 """
 
+
 print(r"""
-    .===========.
-   |   |       |
-   |  /|\      |
-   | /a|d\     |
-   |___________|
-   |_________-_|_,-.
-  [_____________]   )
-  .,,,,,,,,,, ,,.  (_
- /,,,,,,,,,,, ,,,\ (>`\
-(______.-``-._____) \__)
+        ^
+       /^\
+      /___\
+     |=   =|
+     |     |
+     |     |
+     |     |
+     |     |
+     |     |
+    /|##!##|\
+   / |##!##| \
+  /  |##!##|  \
+ |  / ^ | ^ \  |
+ | /  ( | )  \ |
+ |/   ( | )   \|
+     ((   ))
+    ((  :  ))
+    ((  :  ))
+     ((   ))
+      (( ))
+       ( )
+        .
+        .
+        .
 """)
+
 print("Hej, Här har du Marvin, hjälpsamma robot som hjälper dig 🦾")
 
 while True:  # main loop som visar upp menyn å kontrollerar user's val
     print("\nMeny")
     print("1. Skriv ditt namn")
     print("2. Change Temperature Celsius → Fahrenheit")
-    print("3. Poäng till betyg")
-    print("4. Jämför tal: ")
+    print("3. Ange poäng till betyg")
+    print("4. Jämför talen: ")
     print("5. Skriv in personnummer")
     print("6. Rovarspråket")
     print("q. Avsluta")

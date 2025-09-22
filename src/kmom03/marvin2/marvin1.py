@@ -1,5 +1,3 @@
-
-
 def greet():
     print("Hej Ali heter jag, å Robot hälsar dig tillbaka 🤚")
 
@@ -8,6 +6,7 @@ def celsius_to_fahrenheit():
     celcius = float(input("Skriv temperaturen i Celcius:"))
     fahrenheit = round((celcius * 9 / 5) + 32, 2)
     print(f"{celcius} °C Celcius motsvarar {fahrenheit: 2} °F Fahrenheit")
+
 
 def points_to_grade():
     max_poang = float(input("Ange Max poang: "))
@@ -56,6 +55,7 @@ def compare_number():
         except ValueError:
             print("Not a number")
 
+
 def validate_ssn():
     personnummer = input("Skriv in personnummer: ").replace("-", "")
     LENGHT_PERSONNUMMER = 10
@@ -77,6 +77,7 @@ def validate_ssn():
         print("Valid Personnumer ✅")
     else:
         print("Not Valid Personnumer ❌")
+
 
 def robber_language():
     word = input("Skriv ett ord: ")
