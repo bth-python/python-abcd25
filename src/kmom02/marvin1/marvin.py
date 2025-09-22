@@ -26,7 +26,6 @@ while True:  # main loop som visar upp menyn å kontrollerar user's val
     print("4. Jämför tal: ")
     print("5. Skriv in personnummer")
     print("6. Rovarspråket")
-    print("7. dubblera talet 0 - 9")
     print("q. Avsluta")
 
     # låt användaren göra sitt val

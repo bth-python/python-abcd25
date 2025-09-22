@@ -56,9 +56,12 @@ print_area(12)
 def ticket_price(age, distance, base_price):
     price = base_price * distance
 
-    if age < 18:
+    TEENAG = 18
+    SENIOR = 65
+
+    if age < TEENAG:
         price = price * 0.5
-    elif age > 65:
+    elif age > SENIOR:
         price = price * 0.7
     return price
 
@@ -85,38 +88,32 @@ def fun():
     x = "lokal"
     print("funktionen gäller ", x)
 
-
 fun()
 print("funktionen gäller ", x)
-
-
 x = "global"
 
-
-def fun():
-    global x
-    x = "ändrad global"
-    print("funktionen är ", x)
-
-
-fun()
+def func():
+    x = "ändring i x"
+    return x
+x = func()
 print("funktionen är ", x)
 
-x = 12
+# def fun():
+#     global x
+#     x = "ändrad global"
+#     return x
 
 
-def fun():
-    global x
-    x = 18
-    print(x)
+# def fun():
+#     global x
+#     x = 18
+#     print(x)
 
 
-fun()
-print(x)
+# fun()
+# print(x)
 
 x = 100
-
-
 def fun():
     x = 50
     print(x)
@@ -125,119 +122,119 @@ def fun():
 fun()
 print(x)
 
-x = 10
+# x = 10
 
 
-def add_one():
-    global x
-    x = x + 1
+# def add_one():
+#     global x
+#     x = x + 1
 
 
-def add_two():
-    global x
-    x = x + 2
+# def add_two():
+#     global x
+#     x = x + 2
 
 
-add_one()
-print("första add blir då: ", x)
+# add_one()
+# print("första add blir då: ", x)
 
-add_two()
-print("andra add blir då: ", x)
-
-
-x = 0
+# add_two()
+# print("andra add blir då: ", x)
 
 
-def add_1():
-    global x
-    x = x + 1
-    print("efter add 1: ", x)
+# x = 0
 
 
-def add_2():
-    global x
-    x = x + 12
-    print("efter add 2: ", x)
+# def add_1():
+#     global x
+#     x = x + 1
+#     print("efter add 1: ", x)
 
 
-def multi():
-    global x
-    x = x * 3
-    print("efter multi: ", x)
+# def add_2():
+#     global x
+#     x = x + 12
+#     print("efter add 2: ", x)
 
 
-add_1()
-add_2()
-multi()
-add_2()
+# def multi():
+#     global x
+#     x = x * 3
+#     print("efter multi: ", x)
 
 
-x = 1
-y = 2
+# add_1()
+# add_2()
+# multi()
+# add_2()
 
 
-def fun():
-    global x, y
-    x = x + y
-    y = y * 2
-
-    print(f"x = {x}, y = {y}")
+# x = 1
+# y = 2
 
 
-fun()  # x = 3, y = 4
-fun()  # x = 7, y = 8
-fun()  # x 15, y = 16
+# def fun():
+#     global x, y
+#     x = x + y
+#     y = y * 2
 
-x = 5  # global
-
-
-def outer():
-    x = 10
-
-    def inner():
-        global x
-        x = x + 1
-        print("I inner (global x):", x)
-
-    inner()
-    print("I outer (enclosing x):", x)
+#     print(f"x = {x}, y = {y}")
 
 
-outer()
-print("I global:", x)
+# fun()  # x = 3, y = 4
+# fun()  # x = 7, y = 8
+# fun()  # x 15, y = 16
+
+# x = 5  # global
 
 
-counter = 0
+# def outer():
+#     x = 10
+
+#     def inner():
+#         global x
+#         x = x + 1
+#         print("I inner (global x):", x)
+
+#     inner()
+#     print("I outer (enclosing x):", x)
 
 
-def rekursiv_add(n):
-    global counter
-    if n > 0:
-        counter = counter + n
-        rekursiv_add(n - 1)
+# outer()
+# print("I global:", x)
 
 
-rekursiv_add(10)
-print("summan är: ", counter)
-
-x = 0
+# counter = 0
 
 
-def adding(n):
-    global x
-    x = x + n
-    print("x = ", x)
+# def rekursiv_add(n):
+#     global counter
+#     if n > 0:
+#         counter = counter + n
+#         rekursiv_add(n - 1)
 
 
-while True:
-    val = input("skriv ett tal eller Enter q för att avsluta: ")
-    if val == "q":
-        break
+# rekursiv_add(10)
+# print("summan är: ", counter)
 
-    try:
-        nummer = int(val)
-        adding(nummer)
+# x = 0
 
-    except ValueError:
-        print("Not a valid choice!")
-print("Ha det så bra lyckades")
+
+# def adding(n):
+#     global x
+#     x = x + n
+#     print("x = ", x)
+
+
+# while True:
+#     val = input("skriv ett tal eller Enter q för att avsluta: ")
+#     if val == "q":
+#         break
+
+#     try:
+#         nummer = int(val)
+#         adding(nummer)
+
+#     except ValueError:
+#         print("Not a valid choice!")
+# print("Ha det så bra lyckades")
