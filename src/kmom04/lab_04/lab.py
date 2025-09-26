@@ -25,12 +25,12 @@ DBW.assert_(lab.replace_third_item_in_list, [['Dafoe', 'Sheen', 'Berenger', 'Dep
 
 DBW.assert_(lab.sort_list_descending, [["flute", "guitar", "drums", "piano", "bass"]], ['bass', 'drums', 'flute', 'guitar', 'piano'], 1)
 
-DBW.assert_(lab.remove_from_list, [["wasp", "fly", "butterfly", "bumblebee", "mosquito"]],["wasp", "butterfly", "bumblebee", "mosquito"], 1)
+DBW.assert_(lab.remove_from_list, [["wasp", "fly", "butterfly", "bumblebee", "mosquito"], "fly"],['wasp', 'butterfly', 'bumblebee', 'mosquito'], 1)
 
-DBW.assert_(lab.summarize_numbers_in_list, [[123, 4, 125, 69, 155]], [476], 2)
+DBW.assert_(lab.summarize_numbers_in_list, [[123, 4, 125, 69, 155]], 476, 2)
 
-DBW.assert_(lab.average_from_list, [[123, 4.11, 125, 69, 155.3]], [95.282], 2)
+DBW.assert_(lab.average_from_list, [[123, 4.11, 125, 69, 155.3]], 95.3, 2)
 
-DBW.assert_(lab.remove_unwanted_sign, ["The?grass?is?growing."], ["The grass is growing."], 3)
+DBW.assert_(lab.remove_unwanted_sign, ["The?grass?is?growing.", "?"], "The grass is growing.", 3)
 
 DBW.done()
