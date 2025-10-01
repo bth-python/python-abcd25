@@ -6,150 +6,90 @@ Execute the lab using `python3 lab.py` in the terminal and review the output.
 """
 
 
-def hello():
+def concatenate_lists(list1, list2):
     """
-    Returns the string "Hello world".
+    Concatenate list1 and list2 and returns the result.
 
     Returns:
-        str: "Hello world".
+        list: list1 concatenated with list2.
     """
-    return "Hello world"
+    return list1 + list2
 
 
-def magic_number():
+def append_to_list(list1, item):
     """
-    Returns the integer value 42.
+    Append item to list1 and return the result. Use append().
 
     Returns:
-        int: The integer value 42.
+        list: list1.
     """
-    return 42
+    list1.append(item)
+    return list1
 
-
-def float_str(string_number):
+def replace_third_item_in_list(list1, item):
     """
-    Returns the float number of the incoming string.
-
-    Arguments:
-        number (str): The number to cast to float.
+    Replace item on index in list1 and return the result.
 
     Returns:
-        float: The float number.
+        list: list1.
     """
-    return float(string_number)
+    list1[2] = item
+    return list1
 
-
-def string_length(word):
+def sort_list_descending(list1):
     """
-    Returns the length of the incoming string.
-
-    Arguments:
-        word (str): The string to use.
+    Sort list1 in descending order and return the result.
 
     Returns:
-        int: The length of the string.
+        list: list1.
     """
-    return len(word)
+    # TODO: Write your code here
+    return sorted(list1, reverse=True)
 
-
-def round_pi(pi):
+def remove_from_list(list1, item):
     """
-    Returns the value of PI, rounded to three decimals.
-
-    Arguments:
-        pi (float): The value of PI to round.
-    Returns:
-        float: The value of PI, rounded to three decimals.
-    """
-    return round(pi, 3)
-
-
-def concat_strings(word1, word2):
-    """
-    Returns a concatenated string of the incoming strings, with a space between the words.
-
-    Arguments:
-        word1 (str): The first string to use.
-        word2 (str): The second string to use.
+    Remove item from list1 and return the result. Use remove()
 
     Returns:
-        str: The concatenated string.
+        list: list1.
     """
-    return f"{word1} {word2}"
+    # TODO: Write your code here
+    list1.remove(item)
+    return list1
 
-
-def char_at_position(word):
+def summarize_numbers_in_list(list1):
     """
-    Returns the character at index 4 of the incoming string.
-    Hint: String indexing starts at 0.
-
-    Arguments:
-        word (str): The string to use.
+    Summarize the numbers in list1 and return the result. 
+    Use built-in functions, such as sum()
 
     Returns:
-        str: The character at index 4 in the incoming string.
+        int: sum of the numbers in list1.
     """
-    return word[4]
+    # TODO: Write your code here
+    return sum(list1)
 
 
-def lower(word):
+def average_from_list(list1):
     """
-    Returns the incoming string in lowercase.
-    Hint: The lower() method.
-
-    Arguments:
-        word (str): The string to use.
+    Count the average from the numbers in list1 and return the result.
+    Use built-in functions, such as sum() and len()
 
     Returns:
-        str: The string in lowercase.
+        float: average of the numbers in list1 rounded to  decimals.
     """
-    return word.lower()
+    # TODO: Write your code here
+    sum_of_list = sum(list1)
+    return round(sum_of_list/len(list1), 1)
 
-
-def divide_string_number():
+def remove_unwanted_sign(text, sign):
     """
-    Assign the following values to variables. String '30' and integer 5.
-    Convert the string to an integer and divide it by the integer.
-    Round the result to the nearest integer and return it.
-    Hint: int() and round()
+    Use the built-in functions `split()` and `join()` to fix the string `text`,
+    remove the unwanted sign `sign` with space " "
+    and return the fixed string.
 
     Returns:
-        int: The rounded result of int('30') / 5.
+        string: a string without sign.
     """
-    string_number = "30"
-    actual_number = 5
-    result = int(string_number) / actual_number
-    return round(result)
-
-
-def even_or_odd(n):
-    """
-    Determines whether the given integer is even or odd.
-
-    Arguments:
-        n (int): The integer to check.
-
-    Returns:
-        str: "Even" if `n` is divisible by 2, otherwise "Odd".
-    """
-    res = ""
-    if n % 2 == 0:
-        res = "Even"
-    else:
-        res = "Odd"
-    return res
-
-
-def password_check(password):
-    """
-    Checks the length of the given password string.
-
-    Arguments:
-        password (str): The password to check.
-
-    Returns:
-        str: "Too short" if the password length is less than 5, otherwise "OK".
-    """
-    # Annat sätt att skriva if-satser på, om bara vill returnera ett värde
-    max_len = 5
-    return "Too short" if len(password) < max_len else "OK"
+    # TODO: Write your code here
+    words = text.split(sign)
+    return " ".join(words)

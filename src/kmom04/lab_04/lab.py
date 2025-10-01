@@ -23,7 +23,7 @@ DBW.assert_(lab.append_to_list, [['Dafoe', 'Sheen', 'Berenger', 'Depp', 'Whitake
 
 DBW.assert_(lab.replace_third_item_in_list, [['Dafoe', 'Sheen', 'Berenger', 'Depp', 'Whitaker'], 'potato'], ['Dafoe', 'Sheen', 'potato', 'Depp', 'Whitaker'], 1)
 
-DBW.assert_(lab.sort_list_descending, [["flute", "guitar", "drums", "piano", "bass"]], ['bass', 'drums', 'flute', 'guitar', 'piano'], 1)
+DBW.assert_(lab.sort_list_descending, [["flute", "guitar", "drums", "piano", "bass"]], ['piano', 'guitar', 'flute', 'drums', 'bass'], 1)
 
 DBW.assert_(lab.remove_from_list, [["wasp", "fly", "butterfly", "bumblebee", "mosquito"], "fly"],['wasp', 'butterfly', 'bumblebee', 'mosquito'], 1)
 

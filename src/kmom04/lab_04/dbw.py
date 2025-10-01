@@ -30,8 +30,8 @@ class DBW:
     """
 
     PASS = 10
-    PASS_W_HONOUR = 12
-    PASS_TOTAL = 13
+    PASS_W_HONOUR = 11
+    PASS_TOTAL = 12
 
     stats = {}
 
@@ -124,9 +124,8 @@ class DBW:
             result += 0 if stat.failed > 0 else stat.points * stat.passed
 
             for _ in range(stat.points):
-                # if step < len(point_array):
-                step += 1
                 point_array[step] = stat.failed == 0
+                step += 1
 
         def format_point(i, pass_):
             if pass_:
