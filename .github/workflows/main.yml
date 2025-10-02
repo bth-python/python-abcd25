@@ -2,12 +2,14 @@ name: Main Entry Workflow
 
 on:
   pull_request:
-    types: [opened, synchronize, closed]
+    types: [labeled, opened, closed] # skapar PR, gör push, stänger manuellt
+    # types: [opened, synchronize, closed] # skapar PR, gör push, stänger manuellt
   pull_request_review:
-    types: [submitted]
+    types: [submitted] # code review
   push:
-    branches:
-      - "bth/submit/*"
+    tags:
+      - 'v[1-6]\.[0-9]+\.[0-9]+'
+      - 'v10\.[0-9]+\.[0-9]+'
   workflow_dispatch:
 
 jobs:
@@ -20,16 +22,13 @@ jobs:
           echo "github.head_ref: ${{ github.head_ref }}"
           echo "github.base_ref: ${{ github.base_ref }}"
           echo "github.event_name: ${{ github.event_name }}"
-          echo "event_name: ${{ github.event_name }}"
-          echo "pr_action: ${{ github.event.action || '' }}"
+          echo "event.action: ${{ github.event.action || '' }}"
           echo "review_state: ${{ github.event.review.state || '' }}"
+  #       echo "event: ${{ toJson(github.event) }}"
+
   call-decider:
     uses: bth-python/utils/.github/workflows/decider.yml@main
     with:
-      event_name: ${{ github.event_name }}
-      event: ${{ toJson(github.event) }}
-      pr_action: ${{ github.event.action || '' }}
-      review_state: ${{ github.event.review.state || '' }}
       course_id: ${{ vars.COURSE_ID }}
       available_assignments: ${{ vars.ASSIGNMENTS }}
       student_id: ${{ vars.STUDENT_CANVAS_ID }}
