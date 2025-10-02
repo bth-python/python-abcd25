@@ -68,7 +68,7 @@ def average_from_list(list1):
     Use built-in functions, such as sum() and len()
 
     Returns:
-        float: average of the numbers in list1 rounded to 3 decimals.
+        float: average of the numbers in list1 rounded to 1 decimal.
     """
     # TODO: Write your code here
 
