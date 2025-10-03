@@ -1,0 +1,10 @@
+__pycache__/
+*.py[codz]
+*$py.class
+.venv
+venv/
+venv.bak/
+.ruff_cache/
+.DS_Store
+.AppleDouble
+.LSOverride
