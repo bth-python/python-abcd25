@@ -16,7 +16,7 @@ REPO_PATH = setup_and_get_repo_path(FILE_DIR)
 
 
 
-class Test1Marvin3Structure(ExamTestCase):
+class Test1EmissionStructure(ExamTestCase):
     """
     Each assignment has 1 testcase with multiple asserts.
     The different asserts https://docs.python.org/3.6/library/unittest.html#test-cases
