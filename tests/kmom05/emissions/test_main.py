@@ -161,7 +161,7 @@ class Test2Emission2Main(ExamTestCase):
 
 
 
-    @tags("5", "1")
+    @tags("5")
     def test_add(self):
         """
         Testar att anropa menyval 5 följt av menyval 1.
