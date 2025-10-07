@@ -134,7 +134,7 @@ class Test2Emission2Main(ExamTestCase):
             "4", "transport", "", "q"
         ]
 
-        correct = ["1. Dana (104) - 40 kg CO2 från transport", "2. Alice (101) - 15 kg CO2 från transport", "3. Charlie (103) - 10 kg CO2 från transport", "4. Bob (102) - 5 kg CO2 från transport"]
+        correct = ["1. Dana (104): 40 kg CO2 från transport", "2. Alice (101): 15 kg CO2 från transport", "3. Charlie (103): 10 kg CO2 från transport", "4. Bob (102): 5 kg CO2 från transport"]
         data = self.check_print_contain(self._multi_arguments)
         self.assertOrder(correct, data)
 
@@ -155,7 +155,7 @@ class Test2Emission2Main(ExamTestCase):
             "4", "missing", "", "q"
         ]
 
-        correct = ["1. Alice (101) - 0 kg CO2", "2. Bob (102) - 0 kg CO2", "3. Charlie (103) - 0 kg CO2", "4. Dana (104) - 0 kg CO2"]
+        correct = ["1. Alice (101): 0 kg CO2", "2. Bob (102): 0 kg CO2", "3. Charlie (103): 0 kg CO2", "4. Dana (104): 0 kg CO2"]
         data = self.check_print_contain(self._multi_arguments)
         self.assertOrder(correct, data)
 
