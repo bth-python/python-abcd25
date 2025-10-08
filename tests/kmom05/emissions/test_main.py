@@ -181,7 +181,7 @@ class Test2Emission2Main(ExamTestCase):
         self.check_print_contain(self._multi_arguments, correct)
 
 
-    @tags("5", "4", "add")
+    @tags("5", "add")
     def test_add(self):
         """
         Testar att anropa menyval 5 med en student följt av menyval 4 där den nya studenten saknar kategorin.
@@ -202,7 +202,7 @@ class Test2Emission2Main(ExamTestCase):
 
 
 
-    @tags("6", "2")
+    @tags("6")
     def test_remove(self):
         """
         Testar att anropa menyval 6 följt av menyval 2. Nu borde Charlie har lägst utsläpp.
