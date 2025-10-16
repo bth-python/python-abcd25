@@ -155,13 +155,13 @@ class Test2Emission2Main(ExamTestCase):
             "4", "missing", "", "q"
         ]
 
-        correct = ["1. Alice (101): 0 kg CO2", "2. Bob (102): 0 kg CO2", "3. Charlie (103): 0 kg CO2", "4. Dana (104): 0 kg CO2"]
+        correct = ["1. Dana (104): 0 kg CO2", "2. Charlie (103): 0 kg CO2", "3. Bob (102): 0 kg CO2", "4. Alice (101): 0 kg CO2"]
         data = self.check_print_contain(self._multi_arguments)
         self.assertOrder(correct, data)
 
 
 
-    @tags("5")
+    @tags("5", "1")
     def test_add(self):
         """
         Testar att anropa menyval 5 följt av menyval 1.
@@ -181,7 +181,7 @@ class Test2Emission2Main(ExamTestCase):
         self.check_print_contain(self._multi_arguments, correct)
 
 
-    @tags("5", "add")
+    @tags("5", "4", "add")
     def test_add(self):
         """
         Testar att anropa menyval 5 med en student följt av menyval 4 där den nya studenten saknar kategorin.
@@ -202,7 +202,7 @@ class Test2Emission2Main(ExamTestCase):
 
 
 
-    @tags("6")
+    @tags("6", "2")
     def test_remove(self):
         """
         Testar att anropa menyval 6 följt av menyval 2. Nu borde Charlie har lägst utsläpp.
