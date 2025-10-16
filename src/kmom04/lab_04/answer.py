@@ -25,6 +25,7 @@ def append_to_list(list1, item):
     """
     # TODO: Write your code here
 
+
 def replace_third_item_in_list(list1, item):
     """
     Replace item on index in list1 and return the result.
@@ -33,6 +34,7 @@ def replace_third_item_in_list(list1, item):
         list: list1.
     """
     # TODO: Write your code here
+
 
 def sort_list_descending(list1):
     """
@@ -43,6 +45,7 @@ def sort_list_descending(list1):
     """
     # TODO: Write your code here
 
+
 def remove_from_list(list1, item):
     """
     Remove item from list1 and return the result. Use remove()
@@ -52,9 +55,10 @@ def remove_from_list(list1, item):
     """
     # TODO: Write your code here
 
+
 def summarize_numbers_in_list(list1):
     """
-    Summarize the numbers in list1 and return the result. 
+    Summarize the numbers in list1 and return the result.
     Use built-in functions, such as sum()
 
     Returns:
@@ -62,15 +66,17 @@ def summarize_numbers_in_list(list1):
     """
     # TODO: Write your code here
 
+
 def average_from_list(list1):
     """
-    Count the average from the numbers in list1 and return the result. 
+    Count the average from the numbers in list1 and return the result.
     Use built-in functions, such as sum() and len()
 
     Returns:
         float: average of the numbers in list1 rounded to 1 decimal.
     """
     # TODO: Write your code here
+
 
 def remove_unwanted_sign(text, sign):
     """
